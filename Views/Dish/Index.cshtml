@@ -1,0 +1,18 @@
+@model List<Dish>
+
+<h1 class="text-center">Welcome to CRUDelicious</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Check out some recent dishes!</h3>
+      <hr>
+      @foreach (var dish in Model)
+      {
+          <p><a href="/@dish.DishId">@dish.Name</a> by @dish.Chef</p>
+      }
+    </div>
+    <div class="col">
+      <a asp-action="AddDishView" asp-controller="Dish">Add Dish</a>
+    </div>
+  </div>
+</div>
